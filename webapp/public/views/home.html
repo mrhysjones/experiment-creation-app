@@ -1,0 +1,29 @@
+<div class="jumbotron text-center">
+	<h1>Emotion Experiments</h1>
+	<h5><a href='/create'>Create new experiment</a></h5>
+
+	<table st-table="experiments" class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Created By</th>
+				<th>Number of items</th>
+				<th><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></th>
+				<th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="experiment in experiments">
+				<td>{{experiment.name}}</td>
+				<td>{{experiment.description}}</td>
+				<td>{{experiment.createdBy}}</td>
+				<td>To Do</td>
+				<td><a href='/experiment/{{experiment._id}}'>View</a></td>
+				<td><a ng-click="delete(experiment._id)">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p></p>
+</div>
