@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
 var ExperimentSchema = new mongoose.Schema({
-  name: {type: String, required: true}
+  name: {type: String, required: true},
   description: String, 
-  createdBy: {type: String, required: true} 
+  createdBy: {type: String, required: true},
   items: [{
-  	data: {type: String, required: true}
+  	data: {type: String, required: true},
   	dataType: {type: String, enum: ['Twitter', 'YouTube', 'Webpage'], required: true}, 
   	displaySeconds: {type: Number, default: 30}
   }],
