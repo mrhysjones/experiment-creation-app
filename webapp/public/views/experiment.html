@@ -1,8 +1,9 @@
 <div class="jumbotron text-center">
     <h1>{{experiment.name}}</h1>
-    <h3>{{experiment.description}}</h3>
-    <h3>{{experiment.createdBy}}</h3>
-    <h3>QR Code</h3>
+    <h4>Description: {{experiment.description}}</h3>
+    <h4>Created By: {{experiment.createdBy}}</h4>
+    <qrcode data="http://localhost:3000/api/experiments/{{experiment._id}}" size=200></qrcode>
+
 
 
 </div>
