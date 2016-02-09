@@ -3,7 +3,7 @@ var router = express.Router();
 
 var Experiment = require('../models/Experiments.js');
 
-/* GET users listing. */
+/* GET /api/experiments */
 router.get('/', function(req, res, next) {
 	Experiment.find(function (err, experiments) {
 		if (err) return next(err);
