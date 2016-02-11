@@ -1,27 +1,16 @@
-angular.module('CreateExperimentCtrl', ['ExperimentService']).controller('CreateExperimentController', function($scope, ExperimentService) {
+angular.module('CreateExperimentCtrl', ['ExperimentService']).controller('CreateExperimentController', function($scope, $location, ExperimentService) {
 
-	$scope.experimentName = "Fuck this";
+	$scope.experimentName = "";
 	$scope.experimentDesc = "";
 	$scope.experimentCreator = "";
 	$scope.experimentItems = [];
 
-	$scope.save = function(){
-		$scope.experiments = ExperimentService.query();
 
-		if(!$scope.experimentName || !$scope.experimentDesc || !$scope.experimentCreator || !$scope.experimentItems) return;
-		var newExperiment = new Experiments({ name: $scope.experimentName, createdBy: $scope.experimentCreator, 
-			description: $scope.experimentDesc, items: $scope.experimentItems});
-
-		newExperiment.save(function(){
-			$scope.experiments.push(newExperiment);
-
-			// Clear input
-			$scope.experimentName = "";
-			$scope.experimentDesc = "";
-			$scope.experimentCreator = "";
-			$scope.experimentItems = [];
-		});
+	$scope.submit = function(){
+		console.log("executing");
+		ExperimentService.save({name: $scope.experimentName, description: $scope.experimentDesc, createdBy: $scope.experimentCreator, 
+			items: $scope.experimentItems}, function() {
+				$location.path("/");
+			});
 	}
-}])
-
-});
+})

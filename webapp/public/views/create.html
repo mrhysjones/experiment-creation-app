@@ -1,46 +1,49 @@
 <div class="jumbotron">
 	<h2 class="text-center">New Experiment</h2>
-	<form>
+	<form ng-submit="submit()">
 		<fieldset class="form-group row">
 			<label for="experimentName" class="col-sm-2 form-control-label">Name</label>
 			<div class="col-sm-10">
-				<input id="experimentName" type="text" class="form-control" placeholder="Enter experiment name" ng-model="experimentName">
+				<input id="experimentName" type="text" class="form-control" placeholder="Enter experiment name" ng-model="experimentName" required>
 			</div>
 		</fieldset>
 		<fieldset class="form-group row">
 			<label for="experimentDesc" class="col-sm-2 form-control-label">Description</label>
 			<div class="col-sm-10">
-				<input id="experimentDesc" type="text" class="form-control" placeholder="Enter experiment description">
+				<input id="experimentDesc" type="text" class="form-control" placeholder="Enter experiment description" ng-model="experimentDesc">
 			</div>
 		</fieldset>
 		<fieldset class="form-group row">
 			<label for="experimentCreator" class="col-sm-2 form-control-label">Created By</label>
-			<div class="col-sm-10">
-				<input id="experimentCreator" type="text" class="form-control" placeholder="Enter your name">
+			<div class="col-sm-10"> 
+				<input id="experimentCreator" type="text" class="form-control" placeholder="Enter your name" ng-model="experimentCreator" required>
 			</div>			
 		</fieldset>
 
 		<fieldset class="form-group row">
 			<label for="experimentItems" class="col-sm-2 form-control-label">Items</label>
 			<div class="col-sm-10">
-			<div class="col-sm-3">
-			Content type
+			<div class="col-sm-2">
+				<select>
+  				<option value="youtube">YouTube</option>
+  				<option value="twitter">Twitter</option>
+  				<option value="webpage">Webpage</option>
+				</select>
 			</div>
 			<div class ="col-sm-4">
-				<input id="experimentItems" type="text" class="form-control" placeholder="Enter your name">
+				<input id="experimentItems" type="text" class="form-control" placeholder="Item source">
 			</div>
-			<div class ="col-sm-2">
+			<div class ="col-sm-3">
 			<input type="text" class="form-control" placeholder="Display Time">
 			</div>
 			<div class="col-sm-1">
-			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			<a><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 			</div>			
 			</div>
 		</fieldset>
 
 		<div class="col-sm-12">
-			<button ng-click="save()" class="btn btn-primary">Save</button>
+			<input type="submit" class="btn btn-primary"/>
 		</div>
 	</form>
-
 </div>
