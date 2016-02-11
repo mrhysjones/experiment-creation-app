@@ -1,49 +1,67 @@
 <div class="jumbotron">
 	<h2 class="text-center">New Experiment</h2>
 	<form ng-submit="submit()">
+
+		<!-- Experiment name -->
 		<fieldset class="form-group row">
 			<label for="experimentName" class="col-sm-2 form-control-label">Name</label>
 			<div class="col-sm-10">
 				<input id="experimentName" type="text" class="form-control" placeholder="Enter experiment name" ng-model="experimentName" required>
 			</div>
 		</fieldset>
+
+		<!-- Experiment description -->
 		<fieldset class="form-group row">
 			<label for="experimentDesc" class="col-sm-2 form-control-label">Description</label>
 			<div class="col-sm-10">
 				<input id="experimentDesc" type="text" class="form-control" placeholder="Enter experiment description" ng-model="experimentDesc">
 			</div>
 		</fieldset>
+
+		<!-- Experiment creator -->
 		<fieldset class="form-group row">
 			<label for="experimentCreator" class="col-sm-2 form-control-label">Created By</label>
 			<div class="col-sm-10"> 
 				<input id="experimentCreator" type="text" class="form-control" placeholder="Enter your name" ng-model="experimentCreator" required>
-			</div>			
-		</fieldset>
+			</div>		
+		</fieldset>	
 
-		<fieldset class="form-group row">
-			<label for="experimentItems" class="col-sm-2 form-control-label">Items</label>
+		<!-- Experiment Items -->
+		<fieldset class="form-group row" data-ng-repeat="item in experimentItems">
+			<label for="experimentItems" class="col-sm-2 form-control-label">Item {{$index + 1}}</label>
 			<div class="col-sm-10">
 			<div class="col-sm-2">
-				<select>
-  				<option value="youtube">YouTube</option>
+				<select ng-model="item.dataType" required>
+  				<option selected value="youtube">YouTube</option>
   				<option value="twitter">Twitter</option>
   				<option value="webpage">Webpage</option>
 				</select>
 			</div>
 			<div class ="col-sm-4">
-				<input id="experimentItems" type="text" class="form-control" placeholder="Item source">
+				<input id="experimentItems" type="text" class="form-control" ng-model="item.data" placeholder="Data source" required>
 			</div>
 			<div class ="col-sm-3">
-			<input type="text" class="form-control" placeholder="Display Time">
+			<input type="number" class="form-control" ng-model="item.displaySeconds" placeholder="Display Time">
 			</div>
 			<div class="col-sm-1">
-			<a><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+			<button ng-click="removeExperimentItem($index)" class="btn btn-danger" aria-hidden="true">Remove</button>
 			</div>			
 			</div>
 		</fieldset>
+		<div class="form-group row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-10">
+				<button ng-click="addExperimentItem()" class="btn btn-success">Add item</button>
+			</div>
+		</div>
 
-		<div class="col-sm-12">
-			<input type="submit" class="btn btn-primary"/>
+		<div class="form-group row">
+			<div class="col-md-5"></div>
+			<div class="col-md-2">
+				<input type="submit" class="btn btn-primary"/>
+			</div>
+			<div class="col-md-5"></div>
+			
 		</div>
 	</form>
 </div>

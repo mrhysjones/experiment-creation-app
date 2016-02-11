@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todoApp', function(err) {
+mongoose.connect('mongodb://localhost/experiments', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {

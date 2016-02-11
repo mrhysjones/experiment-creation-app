@@ -9,17 +9,17 @@ $scope.constructHrefUrl = function(type, data){
 
 	switch(type){
 		// Assume in the format 'https://twitter.com/*Username/status/*ID'
-		case 'Twitter':
+		case 'twitter':
 		hrefUrl = data;
 		break; 
 
 		// Assume just the video ID passed in - construct YouTube watch URL		
-		case 'YouTube':
+		case 'youtube':
 		hrefUrl = 'https://www.youtube.com/watch?v=' + data; 
 		break;
 
 				// Check if absolute URL - append 'http://' if required
-		case 'Webpage':
+		case 'webpage':
 			if (data.substring(0, 4) != 'http'){
 				data = 'http://' + data; 
 			}
@@ -35,17 +35,17 @@ $scope.constructEmbedUrl = function(type, data){
 
 	switch(type){
 		// Assume in the format 'https://twitter.com/*Username/status/*ID' - use twitframe.com to display within iframe
-		case 'Twitter':
+		case 'twitter':
 		embedUrl = 'http://twitframe.com/show?' + data; 
 		break;
 
 		// Assume just the video ID passed in - construct YouTube embed URL
-		case 'YouTube': 
+		case 'youtube': 
 		embedUrl = 'http://www.youtube.com/embed/' + data; 
 		break;
 
 		// Check if absolute URL - append 'http://' if required
-		case 'Webpage':
+		case 'webpage':
 		if (data.substring(0, 4) != 'http'){
 			data = 'http://' + data; 
 		}

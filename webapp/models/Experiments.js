@@ -6,7 +6,7 @@ var ExperimentSchema = new mongoose.Schema({
   createdBy: {type: String, required: true},
   items: [{
   	data: {type: String, required: true},
-  	dataType: {type: String, enum: ['Twitter', 'YouTube', 'Webpage'], required: true}, 
+  	dataType: {type: String, enum: ['twitter', 'youtube', 'webpage'], required: true}, 
   	displaySeconds: {type: Number, default: 30}
   }],
   updated_at: { type: Date, default: Date.now },
