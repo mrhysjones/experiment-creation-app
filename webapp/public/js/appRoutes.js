@@ -27,6 +27,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'ResultsController'
         })
 
+        .when('/edit/:id', {
+            templateUrl: 'views/edit.html', 
+            controller: 'EditExperimentController'
+        })
+
         $locationProvider.html5Mode(true);
 
     }]);

@@ -1,3 +1,3 @@
 angular.module('experimentsApp', ['ngRoute', 'monospaced.qrcode', 'ngResource', 'appRoutes', 
-	'CreateExperimentCtrl', 'ExperimentsCtrl', 'ExperimentsDetailCtrl', 'ResultsCtrl',
+	'CreateExperimentCtrl', 'EditExperimentCtrl', 'ExperimentsCtrl', 'ExperimentsDetailCtrl', 'ResultsCtrl',
 	'ExperimentService']);

@@ -21,6 +21,6 @@ angular.module('CreateExperimentCtrl', ['ExperimentService']).controller('Create
 	}
 
 	$scope.removeExperimentItem = function(index){
-		$scope.experimentItems.splice(index, 1);
+		$scope.experimentItems.splice(index,1);
 	}
 })
