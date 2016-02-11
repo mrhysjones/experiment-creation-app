@@ -1,9 +1,23 @@
 <div class="jumbotron text-center">
-    <h1>{{experiment.name}}</h1>
-    <h4>Description: {{experiment.description}}</h3>
+		<qrcode data="{{currenthost}}/{{experiment._id}}" size=150></qrcode>
+    <h2>{{experiment.name}} - {{experiment.description}}</h3>
     <h4>Created By: {{experiment.createdBy}}</h4>
-    <qrcode data="http://localhost:3000/api/experiments/{{experiment._id}}" size=200></qrcode>
-
-
-
+    <table st-table="experiment" class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Type</th>
+				<th>Display time</th>
+				<th>Preview</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in experiment.items">
+				<td><a target="_blank" ng-href="{{constructHrefUrl(item.dataType, item.data)}}">{{$index + 1}}</a></td>
+				<td>{{item.dataType}}</td>
+				<td>{{item.displaySeconds}}s</td>
+				<td><iframe ng-src="{{constructEmbedUrl(item.dataType, item.data)}}" allowfullscreen></iframe></td>
+			</tr>
+		</tbody>
+	</table>
 </div>
