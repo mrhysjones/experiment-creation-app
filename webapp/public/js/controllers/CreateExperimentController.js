@@ -4,6 +4,7 @@ angular.module('CreateExperimentCtrl', ['ExperimentService']).controller('Create
 	$scope.experimentDesc = "";
 	$scope.experimentCreator = "";
 	$scope.experimentItems = [{dataType: 'youtube'}];
+	$scope.experimentHelp = "Enter a YouTube Video ID such as tntOCGkgt98"; 
 
 
 	$scope.submit = function(){
@@ -23,4 +24,17 @@ angular.module('CreateExperimentCtrl', ['ExperimentService']).controller('Create
 	$scope.removeExperimentItem = function(index){
 		$scope.experimentItems.splice(index,1);
 	}
+
+	$scope.datasourceTooltip = function(datasource){
+		if (datasource === 'twitter'){
+			$scope.experimentHelp = 'Enter a full tweet URL';
+		}
+		else if(datasource === 'webpage'){
+			$scope.experimentHelp = 'Enter the webpage URL';
+		}
+		else{
+
+		}
+	}
+
 })

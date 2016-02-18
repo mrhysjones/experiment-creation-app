@@ -9,5 +9,7 @@
         "angular-route": "latest", 
         "angular-resource" : "latest", 
         "angular-qrcode" : "latest", 
+        "jquery": "latest", 
+        "angular-ui-bootstrap" : "latest"
     }
 }
