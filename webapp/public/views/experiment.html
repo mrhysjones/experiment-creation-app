@@ -1,5 +1,5 @@
 <div class="jumbotron text-center">
-		<qrcode data="http://{{currenthost}}/api/experiments/{{experiment._id}}" href="http://{{currenthost}}/api/experiments/{{experiment._id}}" size=150></qrcode>
+		<qrcode data="{{currenthost}}/api/experiments/{{experiment._id}}" size=150></qrcode>
     <h2>{{experiment.name}} - {{experiment.description}}</h3>
     <h4>Created By: {{experiment.createdBy}}</h4>
     <table st-table="experiment" class="table table-striped table-bordered">
