@@ -1,5 +1,6 @@
 # Emotion experiment web app
-MEAN stack based web application and REST API to allow emotion experiments to be set up and viewed as part of my final year project. 
+MEAN based web application/API developed to create emotion experiments as part of my Final Year Project
+Available: http://178.62.96.23:3000/
 
 ### Screenshots
 <img src='screenshots/home.png' width=500 height=300/></br>

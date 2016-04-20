@@ -3,32 +3,27 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
     $routeProvider
 
-        // Home Page (Experiments Listing)
+        // List experiments
         .when('/', {
             templateUrl: 'views/home.html',
             controller: 'ExperimentsController'
         })
 
-        // Experiment Detail Page
+        // View experiment
         .when('/experiment/:id', {
             templateUrl: 'views/experiment.html',
             controller: 'ExperimentsDetailController'
         })
 
-        // Create Experiment Page
+        // Create experiment
         .when('/create/', {
             templateUrl: 'views/create.html',
             controller: 'CreateExperimentController'
         })
 
-        // Results Detail Page
-        .when('/results/:id', {
-            templateUrl: 'views/results.html', 
-            controller: 'ResultsController'
-        })
-
+        // Edit experiment
         .when('/edit/:id', {
-            templateUrl: 'views/edit.html', 
+            templateUrl: 'views/edit.html',
             controller: 'EditExperimentController'
         })
 
